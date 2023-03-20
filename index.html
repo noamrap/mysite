@@ -1,0 +1,406 @@
+﻿<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+    <title>Navigation bar</title>
+</head>
+<body>
+    <header>
+        <div id="brand"><a href="">ברוכים הבאים לאתר מרפאת השיניים של דוקטור רפופורט אלכס </a></div>
+        <nav>
+            <ul>
+                <li id="signup"><a href="Odot.html">שעות פעילות </a></li>
+                <li id="login"><a href="Contact.html">                                       יצירת קשר ואודות הרופא                                             </a></li>
+                
+                <li><a href="Reccomends.html">המלצות המטופלים</a></li>
+                <li><a href="questions.html">שאלות נפוצות</a></li>
+                <li><a href="NETINA.html">טיפולי שיניים בהתנדבות כתרומה לקהילה</a></li>
+                <li><a href="GallaryClinic.html">תמונות המרפאה</a></li>
+                <li><a href="celebAndGoodThings.html">מפורסמים שביקרו במרפאה</a></li>
+            </ul>
+        </nav>
+
+        <style>
+         
+            #brand {
+                font-size: 24px;
+                line-height: 1.2;
+            }
+
+            /* Media query for screens smaller than 768px */
+            @media (max-width: 767px) {
+                #brand {
+                    font-size: 18px;
+                    line-height: 1.4;
+                }
+            }
+            .header a {
+                color: white;
+            }
+        </style>
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <ul class="mobile-menu">
+                <li id="signup"><a href="Odot.html">שעות פעילות</a></li>
+                <li id="login"><a href="Contact.html">                                       יצירת קשר ואודות הרופא                            </a></li>
+                <li><a href="Reccomends.html">המלצות וחוות דעת של לקוחות</a></li>
+                <li><a href="FAQ.html">שאלות נפוצות</a></li>
+                <li><a href="BeforeAndAfter.html">תוצאות טיפולים לפני ואחרי</a></li>
+                <li><a href="NETINA.html">טיפולי שיניים בהתנדבות כתרומה לקהילה</a></li>
+                <li><a href="GallaryClinic.html">תמונות המרפאה</a></li>
+                <li><a href="celebAndGoodThings.html">מפורסמים שביקרו במרפאה</a></li>
+
+
+
+            </ul>
+        </div>
+    </header>
+
+   <style >
+       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+       * {
+           padding: 0;
+           margin: 0;
+           box-sizing: border-box;
+       }
+
+       body {
+           background-color: #353836;
+           color: cornflowerblue;
+           font-family: "Poppins", sans-serif;
+       }
+
+       html, body {
+           height: 100%;
+           margin: 0;
+       }
+
+       body {
+           background: src("Images/לתמונות/Screenshot_45.png");
+           background-size: cover;
+           background-position: center;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           display: flex;
+           flex-direction: column;
+           min-height: 90vh;
+       }
+
+       main {
+           flex: 1;
+       }
+
+       @media (max-width: 767px) {
+           body {
+               background-size: contain;
+               background-position: center center;
+           }
+       }
+
+       header a {
+           text-decoration: none;
+       }
+
+       header {
+           padding: 0 20px;
+           background-color: #1b5d7e;
+           height: 50px;
+           display: flex;
+           justify-content: space-between;
+       }
+
+       #brand {
+           font-weight: bold;
+           font-size: 17px;
+           display: flex;
+           align-items: center;
+       }
+
+           #brand a {
+               color: #4f09c3;
+           }
+
+       ul {
+           list-style: none;
+           height: 100%;
+           display: flex;
+           align-items: center;
+           justify-content: space-around;
+       }
+
+           ul a {
+               color: #5b49fb;
+               position: relative;
+               text-decoration: none;
+           }
+
+               ul a::before {
+                   content: "";
+                   position: absolute;
+                   width: 100%;
+                   height: 2px;
+                   bottom: 0;
+                   left: 0;
+                   background-color: #2885d4;
+                   visibility: hidden;
+                   transform: scaleX(0);
+                   transition: all 0.3s ease-in-out 0s;
+               }
+
+               ul a:hover::before {
+                   visibility: visible;
+                   transform: scaleX(1);
+               }
+
+           ul li {
+               padding: 5px;
+               margin-left: 10px;
+           }
+
+               ul li:hover {
+                   transform: scale(1.1);
+                   transition: 0.3s;
+               }
+
+       
+
+      
+
+       #hamburger-icon {
+           margin: auto 0;
+           display: none;
+           cursor: pointer;
+       }
+
+           #hamburger-icon div {
+               width: 35px;
+               height: 7px;
+               background-color: white;
+               margin: 6px 0;
+               transition: 0.4s;
+           }
+
+       .mobile-menu-icon {
+           position: fixed;
+           top: 0;
+           right: 0;
+           padding: 15px;
+           cursor: pointer;
+           background-color: white;
+           border: 1px solid black;
+           z-index: 9999;
+           width :100px;
+       }
+
+           .mobile-menu-icon .bar {
+               width: 35px;
+               height: 3px;
+               background-color: black;
+               margin: 5px 0;
+           }
+
+       .open .bar1 {
+           transform: rotate(-45deg) translate(-6px, 6px);
+       }
+
+       .open .bar2 {
+           opacity: 0;
+       }
+
+       .open .bar3 {
+           transform: rotate(45deg) translate(-6px, -8px);
+       }
+
+       .open .mobile-menu {
+           display: flex;
+           flex-direction: column;
+           align-items: normal;
+           justify-content: flex-start;
+       }
+
+       .mobile-menu {
+           display: none;
+           position: absolute;
+           top: 50px;
+           left: 0;
+           height: 100%;
+           width: 100%;
+           background-color: #b2d8c7;
+           border: 1px solid black;
+           z-index: 9998;
+       }
+
+           .mobile-menu a {
+               display: block;
+               padding: 1rem 2rem;
+               color: #333;
+               text-decoration: none;
+               border-bottom: 2px solid transparent;
+               transition: border-bottom 0.3s ease-in-out, color 0.3s ease-in-out;
+               font-size: 1.2rem;
+           }
+
+               .mobile-menu a:hover {
+                   border-bottom: 2px solid #333;
+                   color: #fff;
+                   background-color: #333;
+               }
+
+       @media (max-width: 768px) {
+           .mobile-menu.open {
+               display: block;
+           }
+       }
+           .mobile-menu li {
+               margin-bottom: 11px;
+           }
+
+       @media only screen and (max-width: 600px) {
+           header nav {
+               display: none;
+           }
+
+           #hamburger-icon {
+               display: block;
+           }
+       }
+
+       @media only screen and (max-width: 768px) {
+           .banorrrr h1 {
+               font-size: 3rem;
+               margin-bottom: 1.5rem;
+           }
+
+           .banorrrr p {
+               font-size: 1.25rem;
+               margin-bottom: 1.5rem;
+           }
+
+           .content {
+               padding: 3rem 0;
+           }
+       }
+
+       @media only screen and (max-width: 480px) {
+           .banorrrr h1 {
+               font-size: 2rem;
+               margin-bottom: 1rem;
+           }
+
+           .banorrrr p {
+               font-size: 1rem;
+               margin-bottom: 1rem;
+           }
+
+           .content {
+               padding: 2rem 0;
+           }
+       }
+
+
+       h1 {
+           transition: transform 0.2s ease-in-out;
+       }
+
+           h1:hover {
+               transform: scale(1.1);
+           }
+
+   </style>
+    <script >
+        function toggleMobileMenu(menu) {
+            menu.classList.toggle('open');
+        }
+    </script>
+           
+</body>
+</html>
+<script>
+
+</script>
+<style >
+    .banorrrr {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* align content to the top */
+        align-items: flex-start; /* align content to the left */
+        height: 100vh; /* Set container height to fill the viewport */
+        padding: 2rem; /* Add some padding to the container */
+    }
+
+    h1 {
+        margin-bottom: 0.5rem; /* Add some space between h1 and h3 */
+    }
+    li {
+        font-weight: bold;
+    }
+    ul li a {
+        color: #000000; /* black color */
+        font-weight: bold;
+    }
+
+    ul li a {
+        color: #fff; /* set default link color */
+        transition: color 0.3s ease-in-out; /* add smooth color transition */
+    }
+
+        ul li a:hover {
+            color: #ff9900; /* set link color on hover */
+        }
+
+        ul li a:nth-child(2):hover {
+            color: #00ccff;
+        }
+
+        ul li a:nth-child(3):hover {
+            color: #ff6699;
+        }
+
+        ul li a:active {
+            color: #FF9900;
+            text-decoration: none;
+            border-bottom: 2px solid #FF9900;
+        }
+    body {
+        background: linear-gradient(to right, aqua 50%, white 50%), url("https://www.myrehovot.co.il/sites/yavne/UserContent/images/2021/5/ANIMALS/73524693_832888333793328_7307982030619279360_n.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        display: flex;
+        flex-direction: column;
+        min-height: 90vh;
+        background-size: initial;
+    }
+       body {
+  background: aqua url("https://www.myrehovot.co.il/sites/yavne/UserContent/images/2021/5/ANIMALS/73524693_832888333793328_7307982030619279360_n.jpg") center no-repeat fixed;
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+}
+    header {
+        background-color: purple;
+    }
+
+    #brand a {
+        color: white;
+    }
+
+    nav ul li a {
+        color: white;
+    }
+
+    #hamburger-icon {
+        color: white;
+    }
+
+    .mobile-menu li a {
+        color: purple;
+    }
+
+
+</style>
